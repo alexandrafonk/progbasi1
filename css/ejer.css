@@ -1,0 +1,34 @@
+* { 
+   margin: 0;
+padding: 0;
+}
+body {
+    background-color: #faebd7;
+}
+h1 {
+    color: #0000ff;
+    
+}
+p#color_p {
+    color:#ff0000;
+}
+
+p.color_p {
+    color: #adff2f;
+
+}
+.color_p {
+    color: #8a2be2;
+
+}
+div#menu_nav > ul#opciones > li {
+    background-color: black;
+    color: white;
+
+}
+
+div#menu_nav > ul#opciones > li:hover {
+    background-color: white;
+    color:black;
+
+}
