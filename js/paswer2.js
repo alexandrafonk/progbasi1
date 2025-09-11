@@ -1,30 +1,28 @@
 const password = document.getElementById("password");
-const toggle_password = document.getElementById("toggle_password");
-//logica para ver y ocultar contraseña
-toggle_password.addEventListener("click",()=> {
-    const type = password.type === "password" ? "text" : "password";
-    password.type = type;
-    toggle_password.classList.toggle("fa-eye"); 
-    toggle_password.classList.toggle("fa-eye-slash"); 
-    
-});
+const password2  = document.getElementById("password2");
+const toggle_password  = document.getElementById("toggle_password");
+const toggle_password2  = document.getElementById("toggle_password2");
 
-const password = document.getElementById("password");
-const toggle_password = document.getElementById("toggle_password");
 //logica para ver y ocultar contraseña
-toggle_password.addEventListener("click",()=> {
-    const type = password.type === "password" ? "text" : "password";
-    password2.type = type;
-    toggle_password.classList.toggle("fa-eye"); 
-    toggle_password.classList.toggle("fa-eye-slash"); 
-    
-});
+
+function visualizar(input,icon ){
+ const type = input.type === "password" ? "text" : "password";
+    input.type = type;
+    icon.classList.toggle("fa-eye"); 
+    icon.classList.toggle("fa-eye-slash"); 
+}
+
+toggle_password.addEventListener("click",()=> visualizar(password,toggle_password));
+toggle_password2.addEventListener("click",()=> visualizar(password2,toggle_password2));
+
+
 function validar(){
-    let password =document.getElementById("password").value;
-    let lowercase =/[a_z]/.test(password);
-    let uppercase =/[A_Z]/.test(password);
+    let password = document.getElementById("password").value;
+    let lowercase =/[a-z]/.test(password);
+    let uppercase =/[A-Z]/.test(password);
     let number =/\d/.test(password);
-    let specialchar =/[\w_]/.test(password);
+    let specialchar =/[\W_]/.test(password);
+    console.log(specialchar);
     if(password.length < 8){
     Swal.fire(
         "Error",
